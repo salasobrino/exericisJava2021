@@ -46,6 +46,9 @@ public boolean moreExpensiveThan(Apartment otherApartment) {
 	return false;
 	
 }
+
+//do all getters and setters with Eclipse's Source.
+
 public int getRooms() {
 	return rooms;
 }
