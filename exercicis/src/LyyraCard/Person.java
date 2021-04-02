@@ -7,8 +7,8 @@ public class Person {
 	
 	String name;
 	int age;
-	
 	MyDate date;
+	
 	Calendar x=new GregorianCalendar();
 	
 	public Person(String name) {
@@ -38,6 +38,14 @@ public class Person {
 	public void setAge(int age) {
 		int year = x.get(Calendar.YEAR);
 		this.age = year-date.getYear();
+	}
+	
+	public MyDate getDate() {
+		return date;
+	}
+	
+	public void setDate(MyDate date) {	
+		this.date=date;		
 	}
 	
 	public String toString() {

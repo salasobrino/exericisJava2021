@@ -85,25 +85,36 @@ public class CashRegister {
 		
 	}
 	
-	//public boolean payEconomical(LyyraCard card) {
+	public boolean payEconomical(LyyraCard card) {
 	// the price of the economical lunch is 2.50 euros
+		double priceEconomicalLunch=2.50;
 	// if the balance of the card is at least the price of the lunch:
-	// the amount of sold lunches is incremented by one
-	// the method returns true
+		if(card.getBalance()>=priceEconomicalLunch) {
+			card.pay(priceEconomicalLunch);
+			// the amount of sold lunches is incremented by one
+			economicalSold=getEconomicalSold()+1;
+			// the method returns true
+			return true;
+		}	
+	
 	// if not, the method returns false
-	//double priceEconomical = 2.50;	
+			return false;			
+	}
 	
-	
-		
-	//}
-	
-	//public boolean payGourmet(LyyraCard card) {
+	public boolean payGourmet(LyyraCard card) {
 	// the price of the gourmet lunch is 4.00 euros
+		double priceGourmet=4.0;
 	// if the balance of the card is at least the price of the lunch:
+		if(card.getBalance()>=priceGourmet) {
+		card.pay(priceGourmet);
 	// the amount of sold lunches is incremented by one
+		gourmetSold=getGourmetSold()+1;	
 	// the method returns true
+		return true;
+		}
 	// if not, the method returns false
-	//}
+		return false;
+	}
 	
 	public void loadMoneyToCard(LyyraCard card, double sum) {
 	// ...

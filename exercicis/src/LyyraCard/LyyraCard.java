@@ -3,6 +3,11 @@ package LyyraCard;
 public class LyyraCard {
 	
 	private double balance;
+	//add class Person
+	Person name;
+	//add class MyDate
+	MyDate date;
+	
 	public LyyraCard(double balance) {
 	this.balance = balance;
 	}
