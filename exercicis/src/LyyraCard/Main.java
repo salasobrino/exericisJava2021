@@ -7,18 +7,18 @@ public class Main {
 		
 		
 		
-		/*
-		 * LyyraCard cardOfPekka = new LyyraCard(10);
-		 * System.out.println("money on the card " + cardOfPekka.balance() ); boolean
-		 * succeeded = cardOfPekka.pay(8); System.out.println("money taken: " +
-		 * succeeded ); System.out.println("money on the card " + cardOfPekka.balance()
-		 * ); succeeded = cardOfPekka.pay(4); System.out.println("money taken: " +
-		 * succeeded ); System.out.println("money on the card " + cardOfPekka.balance()
-		 * );
-		 */
+	/*
+	 * LyyraCard cardOfPekka = new LyyraCard(10);
+	 * System.out.println("money on the card " + cardOfPekka.balance() ); boolean
+	 * succeeded = cardOfPekka.pay(8); System.out.println("money taken: " +
+	 * succeeded ); System.out.println("money on the card " + cardOfPekka.balance()
+	 * ); succeeded = cardOfPekka.pay(4); System.out.println("money taken: " +
+	 * succeeded ); System.out.println("money on the card " + cardOfPekka.balance()
+	 * );
+	 */
 		 
 		  
-	System.out.println( "---------------------------------------------------------------------------------------");
+	System.out.println( "----------------------------------------------------------------------------------------");
 		  
 			
 	/*
@@ -60,7 +60,7 @@ public class Main {
 		  System.out.println("payment success: " + succeeded);
 		  System.out.println("the card balance " + cardOfJim.balance() + " euros");
 		  System.out.println( unicafeExactum );
-//		  System.out.println();
+
 
 	
 	}
