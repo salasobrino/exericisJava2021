@@ -47,17 +47,18 @@ public class CashRegister {
 	double priceEconomicLunch=2.50;
 		// if the given cash is at least the price of the lunch:
 	if(cashGiven>=priceEconomicLunch){
-		// the price of lunch is added to register	
-		economicalSold=getEconomicalSold()+1;
-		// the amount of the sold lunches is incremented by one
-		cashInRegister=getCashInRegister()+2.5;
-		
-		double returnCash = cashGiven - priceEconomicLunch;
-		// the method returns cashGiven - lunch price
-		return returnCash;
+	// the price of lunch is added to register	
+	economicalSold=getEconomicalSold()+1;
+	// the amount of the sold lunches is incremented by one
+	cashInRegister=cashInRegister+2.5;
+	//cashInRegister=getCashInRegister()+2.5;
+	//setCashInRegister(getCashInRegister()+2.5);
+	double returnCash = cashGiven - priceEconomicLunch;
+	// the method returns cashGiven - lunch price
+	return returnCash;
 	}
 		
-	// if not enough money is given, all is returned and nothingelse happens
+	// if not enough money is given, all is returned and nothing else happens
 	 double returnCash = cashGiven;
 	
 	 return returnCash;
@@ -69,11 +70,14 @@ public class CashRegister {
 	double priceGourmetLunch=4.0;
 	// if the given cash is at least the price of the lunch:		
 	if(cashGiven>=priceGourmetLunch){
-	// the price of lunch is added to the register	
+		
+		// the price of lunch is added to the register	
 		gourmetSold=getGourmetSold()+1;
-	// the amount of the sold lunches is incremented by one	
-		cashInRegister=getCashInRegister()+4.0;
-	// the method returns cashGiven - lunch price	
+		// the amount of the sold lunches is incremented by one	
+		cashInRegister=cashInRegister+4.0;
+		//	cashInRegister=getCashInRegister()+4.0;
+		//	setCashInRegister(getCashInRegister()+4.0);
+		// the method returns cashGiven - lunch price	
 		double returnCash = cashGiven - priceGourmetLunch;
 		
 		return returnCash;
@@ -82,7 +86,11 @@ public class CashRegister {
 	double returnCash = cashGiven;
 	
 	 return returnCash;
-		
+	
+	}
+	
+	public void provaPrint() {
+		System.out.println(cashInRegister);
 	}
 	
 	public boolean payEconomical(LyyraCard card) {
@@ -93,6 +101,7 @@ public class CashRegister {
 			card.pay(priceEconomicalLunch);
 			// the amount of sold lunches is incremented by one
 			economicalSold=getEconomicalSold()+1;
+			cashInRegister=cashInRegister+2.5;
 			// the method returns true
 			return true;
 		}	
@@ -106,11 +115,12 @@ public class CashRegister {
 		double priceGourmet=4.0;
 	// if the balance of the card is at least the price of the lunch:
 		if(card.getBalance()>=priceGourmet) {
-		card.pay(priceGourmet);
-	// the amount of sold lunches is incremented by one
-		gourmetSold=getGourmetSold()+1;	
-	// the method returns true
-		return true;
+			card.pay(priceGourmet);
+			// the amount of sold lunches is incremented by one
+			gourmetSold=getGourmetSold()+1;	
+			cashInRegister=cashInRegister+4.0;
+			// the method returns true
+			return true;
 		}
 	// if not, the method returns false
 		return false;
@@ -118,6 +128,8 @@ public class CashRegister {
 	
 	public void loadMoneyToCard(LyyraCard card, double sum) {
 	// ...
+		card.setBalance(sum+card.getBalance());
+		
 	}
 	
 	public String toString() {
