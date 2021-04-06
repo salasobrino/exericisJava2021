@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class Utilities {
 	
-	public static void printListExtended(ArrayList<BirdDatabase> bird) {
+	public static void printListExtended(ArrayList<Bird> birds) {
 		System.out.println("Birds");
 		System.out.println("------------------------------------------------------------");
 		
-		for (BirdDatabase birds : bird) {
-			System.out.println(birds);
+		
+		
+		for (Bird bird : birds) {
+			System.out.println(bird);
 		}
 	}
 

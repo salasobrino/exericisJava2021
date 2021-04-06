@@ -1,20 +1,22 @@
 package Birding;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//init, in this case, reader and handle events: while
 		System.out.println("loading ...."  + "\n");
-		
+				
 		Scanner scanner = new Scanner(System.in);
 		BirdDatabase db = new BirdDatabase();
 		
 		while (true) {
-			
-	    	
+				    	
 			String command = ask(scanner, "Option?");
 				if (command.equals("Quit")) {
 					break;
@@ -52,10 +54,26 @@ public class Main {
 			Scanner scanner = new Scanner(System.in);
 			String add1 = scanner.nextLine();
 			String add2 = scanner.nextLine();
-			db = new BirdDatabase(add1,add2);
-			db.addBird(add1, add2);
+											
+			Bird bird = new Bird(add1, add2); //creo objecte amb les entrades per scann
+			ArrayList<Bird> birds= new ArrayList<Bird>(); //creo l'Array List per afegir l'Objecte
 			
-			System.out.println(db);
+			if(bird.equals(bird)) { //--> no funciona
+				birds.add(bird); //Afegeixo objecte instanciat dins l'Array. Funciona per que imprimeix un ArrayList
+				db.printList(birds);//Imprimeixo objecte birds des de clase BirdDatabase
+				Utilities util = new Utilities();
+				util.printListExtended(birds); //Imprimeixo llista Birds des d'Utilities. Funciona però no llista
+				
+			} else {
+					
+			//db.addBird(add1, add2);
+			  //creo ArrayList dels objectes Bird
+			
+			System.out.println("Object duplicated");
+			
+			scanner.close();
+			}
+							
 			
 			
 		}
@@ -63,17 +81,33 @@ public class Main {
 			Scanner scanner = new Scanner(System.in);
 			String observ = scanner.nextLine();
 			
+			//if(db.observation(observ)) 
 			
-			if(db.observation(observ)){
-				System.out.println("What was observed:? " + db.getName());
+			if (db.findBird(observ)){
 				
-			} else {
+				System.out.println("What was observed:? ");
 				
-				System.out.println("Is not a bird!\n");
 			}
+			
+			System.out.println("Is not a bird!\n");
+			
+			/*
+			 * if(db.observation(observ)){ System.out.println("What was observed:? " +
+			 * db.getBirds(observ));
+			 * 
+			 * } else {
+			 * 
+			 * System.out.println("Is not a bird!\n"); }
+			 */
 		
 		}
-		public static void show(Scanner input, BirdDatabase db) { }
+		public static void show(Scanner input, BirdDatabase db) { 
+			Scanner scanner = new Scanner(System.in);
+			String observ = scanner.nextLine();
+			
+			
+			
+		}
 		public static void statistics(Scanner input, BirdDatabase db) { }
 
 		
